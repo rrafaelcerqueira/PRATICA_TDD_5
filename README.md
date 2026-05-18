@@ -71,13 +71,13 @@ Imagem 3: Tela logout
 
 ## Requisitos para a Sprint 2
 
-Agora começa o seu desafio: desenvolver uma agenda de contatos completa com CRUD.
+Agora começa o seu desafio: desenvolver um cadastro de links com as operações de CRUD.
 
 Com base no modelo implementado (ver imagem abaixo), você deve:
 <img src="model.png">
 
 
-✅ Criar um formulário para o modelo Agenda (pode usar Forms ou ModelForms);
+✅ Criar um formulário para o modelo LinkModel (pode usar Forms ou ModelForms);
 
 Implementar as seguintes funcionalidades:
 
