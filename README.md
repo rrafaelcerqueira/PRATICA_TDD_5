@@ -1,14 +1,36 @@
-# Prática TDD 5
+# Prática TDD 5 - LinkPedia
 
-Desafio técnico para os alunos da disciplina "Desenvolvimento Web 3"
+Desafio técnico para os alunos da disciplina "Desenvolvimento Web 3" - FATEC.
 
+Este projeto consiste numa aplicação web em Django para gestão de links (LinkPedia), desenvolvida com foco em Test-Driven Development (TDD) e cobertura de testes acima de 90%.
 
+---
 
+## 🛠️ Como executar o projeto
 
-No ambiente Linux:
+### No ambiente Windows:
 
 ```console
-git clone https://github.com/orlandosaraivajr/Pratica_TDD_5.git
+git clone [https://github.com/rrafaelcerqueira/Pratica_TDD_5.git](https://github.com/rrafaelcerqueira/Pratica_TDD_5.git)
+cd Pratica_TDD_5/
+python -m venv venv
+cd venv/scripts
+activate.bat
+cd ../..
+pip install -r requirements.txt
+cd linkpedia/
+python manage.py migrate
+python manage.py test
+coverage run --source='.' manage.py test 
+coverage html
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+### No ambiente Linux:
+
+```console
+git clone [https://github.com/rrafaelcerqueira/Pratica_TDD_5.git](https://github.com/rrafaelcerqueira/Pratica_TDD_5.git)
 cd Pratica_TDD_5/
 virtualenv -p python3 venv
 source venv/bin/activate
@@ -22,82 +44,46 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-No ambiente Windows:
+---
 
-```console
-git clone https://github.com/orlandosaraivajr/Pratica_TDD_5.git
-cd Pratica_TDD_5/
-virtualenv venv
-cd venv
-cd scripts
-activate.bat
-cd ..
-cd ..
-pip install -r requirements.txt
-cd linkpedia/
-python manage.py migrate
-python manage.py test
-coverage run --source='.' manage.py test 
-coverage html
-python manage.py createsuperuser
-python manage.py runserver
+### Credenciais padrão para teste inicial:
 
-```
+* Username: aluno
+* E-mail: seu e-mail institucional
+* Password: fatec
 
-Crie um superusuário com as seguintes credenciais:
+---
 
-- Username <b>aluno</b>:
-- E-mail address: <b>seu e-mail institucional</b>
-- Password: <b>fatec</b>
+### 🏁 Estado do Projeto
 
-### Requisitos da Sprint 1
+#### Sprint 1 - Concluída ✅
+A expectativa inicial do projeto foi o desenvolvimento do sistema de autenticação.
 
-<img src="caso_uso.png">
+O login somente ocorre com o e-mail institucional @cps.sp.gov.br.
 
-A expectativa do projeto é que tenha-se um cadastro de links. O que foi priorizado na primeira sprint foi o sistema de login/logout.
-O login somente pode ocorrer com o e-mail institucional @cps.sp.gov.br 
+Proteção de rotas básicas e funcionalidade de Logout implementadas.
 
+==============================================================
 
-<img src="login.png">
+#### Sprint 2 - Concluída ✅
+O foco da segunda sprint foi desenvolver um cadastro de links com as operações de CRUD, totalmente protegido e testado.
 
-Imagem 1: Tela de Login
+Com base no modelo LinkModel estabelecido, as seguintes funcionalidades foram implementadas e validadas:
 
-<img src="index.png">
+✅ Criar formulário para o modelo LinkModel utilizando ModelForms.
+✅ Cadastrar Link (Create)
+✅ Listar Links (Read)
+✅ Atualizar Link (Update)
+✅ Remover Link (Delete)
+✅ Proteção de Rotas: Todas as funcionalidades do CRUD estão protegidas pelo decorador @login_required, garantindo acesso exclusivo a utilizadores autenticados.
 
-Imagem 2: Tela index
+---
 
-<img src="logout.png">
-Imagem 3: Tela logout
+### 🎨 Melhoria de Interface (UI/UX)
+Além dos requisitos técnicos, a interface da aplicação foi totalmente redesenhada. O design base do Bootstrap foi aprimorado com técnicas de Glassmorphism, transições suaves, sombras modernas e um painel de ações intuitivo, oferecendo uma experiência de utilizador (UX) de nível premium.
 
-## Requisitos para a Sprint 2
+---
 
-Agora começa o seu desafio: desenvolver um cadastro de links com as operações de CRUD.
+### 🧪 Cobertura de Testes (TDD)
 
-Com base no modelo implementado (ver imagem abaixo), você deve:
-<img src="model.png">
-
-
-✅ Criar um formulário para o modelo LinkModel (pode usar Forms ou ModelForms);
-
-Implementar as seguintes funcionalidades:
-
-✅ Cadastrar contato
-
-✅ Listar contatos
-
-✅ Atualizar contato
-
-✅ Remover contato
-
-Proteger todas essas funcionalidades para que apenas usuários logados tenham acesso.
-
-Ao final da Sprint 2, o sistema deverá conter um CRUD funcional de links em Django.
-
-
-## Ajustes nos testes / novos testes
-
-O código fonte passará por atualizações para acomodar estes novos requisitos. Com isso, você deve ajudar os testes existentes e criar novos testes.
-
-Você recebeu a sprint 1 com uma cobertura de teste acima de 90%. É esperado que ao final da sprint 2 a cobertura mantenha-se neste patamar.
-
-<img src="cobertura_testes.png">
+![Teste](/linkpedia/Testes.png)
