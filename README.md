@@ -63,7 +63,7 @@ O login somente ocorre com o e-mail institucional @cps.sp.gov.br.
 
 Proteção de rotas básicas e funcionalidade de Logout implementadas.
 
-==============================================================
+---
 
 #### Sprint 2 - Concluída ✅
 O foco da segunda sprint foi desenvolver um cadastro de links com as operações de CRUD, totalmente protegido e testado.
